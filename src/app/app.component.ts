@@ -3,7 +3,8 @@ import {ChromeOSBookFactory} from '../design_pattern/creational/abstract_factory
 import {Factory} from '../design_pattern/creational/abstract_factory/Factory';
 import {Geek} from '../design_pattern/creational/builder/Geek';
 import Manufacturer from '../design_pattern/creational/builder/Manufacturer';
-import {Sheep} from "../design_pattern/creational/prototype/Sheep";
+import {Sheep} from '../design_pattern/creational/prototype/Sheep';
+import {HDMIToVGAAdapter} from '../design_pattern/structural/adapter/HDMIToVGAAdapter';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,10 @@ export class AppComponent implements OnInit {
     // const sheep = new Sheep('Doly', 'white');
     // const cloneSheep = <Sheep> sheep.clone();
     // this.prototype_info = cloneSheep.getColor() + ' ' + cloneSheep.getName();
+
+    const adapter: HDMIToVGAAdapter = new HDMIToVGAAdapter();
+    // Your computer uses HDMI and your projector uses VGA
+    console.log(adapter.handleDigitalSignal());
 
   }
 }
